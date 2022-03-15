@@ -1,9 +1,12 @@
 import requests
 import json
+import pandas as pd
 
 LASTFM_KEY = '105d6826d54097eaed281cbfb9930456'
 LASTFM_URL = 'http://ws.audioscrobbler.com/2.0/'
 LASTFM_USER = 'Duracell013'
+
+EXPORT_FILE = 'scrobbles.pkl'
 
 def get_scrobbles(user, limit=200, page=1, extended=0):
     params = {'method': 'user.getRecentTracks',
@@ -26,5 +29,8 @@ def jprint(obj):
 
 
 if __name__ == '__main__':
-    results = get_scrobbles(LASTFM_USER)
-    jprint(results.json())
+    df = pd.read_pickle(EXPORT_FILE)
+    print(df.head())
+    
+    #results = get_scrobbles(LASTFM_USER)
+    #jprint(results.json())
