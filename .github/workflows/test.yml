@@ -24,7 +24,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run python script
         env:
-          LASTFM_KEY: ${{ secret.LASTFM_KEY }}
+          LASTFM_KEY: ${{ secrets.LASTFM_KEY }}
         run: |
           pip install -r .github/workflows/requirements.txt
           python lastfm_mini_exemple.py
