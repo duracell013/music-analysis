@@ -26,7 +26,7 @@ def get_scrobbles(user, limit=200, page=1, extended=0):
               'format': 'json'}
     r = requests.post(LASTFM_URL, params=params)
     if not r.ok:
-        raise ValueError(r.json()['error'])
+        raise ValueError(r.json()['error'], r.json()['message'])
     return r
 
 
