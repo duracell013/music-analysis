@@ -32,6 +32,7 @@ def jprint(obj):
 if __name__ == '__main__':
     df = pd.read_pickle(EXPORT_FILE)
     print(df.head())
-    
+    df = df.iloc[-10]
+    df.to_pickle(EXPORT_FILE)
     #results = get_scrobbles(LASTFM_USER)
     #jprint(results.json())
