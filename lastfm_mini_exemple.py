@@ -70,7 +70,7 @@ def fill_data(df, results, last_date):
         album = t['album']['#text']
         track = t['name']
         #track_uri, artist_uris = find_uri(artist, album, track)
-        tags = lfm.get_tags(track, artist)
+        tags = get_tags(track, artist)
         dic = {'artist': artist,
                'album': album,
                'track': track,
