@@ -1,8 +1,9 @@
 import requests
 import json
 import pandas as pd
+import os
 
-LASTFM_KEY = '105d6826d54097eaed281cbfb9930456'
+LASTFM_KEY = os.environ.get('LASTFM_KEY')
 LASTFM_URL = 'http://ws.audioscrobbler.com/2.0/'
 LASTFM_USER = 'Duracell013'
 
