@@ -21,6 +21,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
+      # Use Python 3.7 to avoid compatibility issue with pickle files (v5 in 3.9 and above)      
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+
       # Runs a set of commands using the runners shell
       - name: Run python script
         env:
