@@ -112,5 +112,5 @@ if __name__ == '__main__':
         page += 1
         print(f'█', end='')
     df.sort_index(inplace=True)
-    df.to_pickle(EXPORT_FILE)
+    df.to_pickle(EXPORT_FILE, protocol=4)
     print(' done')
