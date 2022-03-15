@@ -28,3 +28,8 @@ jobs:
         run: |
           pip install -r .github/workflows/requirements.txt
           python lastfm_mini_exemple.py
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add scrobbles.pkl
+          git commit -m "updated scrobbles"
+          git push
