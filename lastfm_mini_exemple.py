@@ -4,6 +4,8 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import os
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
 
 LASTFM_KEY = os.environ.get('LASTFM_KEY')
 LASTFM_URL = 'http://ws.audioscrobbler.com/2.0/'
@@ -14,7 +16,7 @@ FEATURES = ['acousticness', 'danceability', 'energy', 'instrumentalness',
 
 EXPORT_FILE = 'scrobbles.pkl'
 
-REFRESH = False
+REFRESH = True
 
 def get_scrobbles(user, limit=200, page=1, extended=0):
     params = {'method': 'user.getRecentTracks',
