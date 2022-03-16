@@ -14,7 +14,7 @@ FEATURES = ['acousticness', 'danceability', 'energy', 'instrumentalness',
 
 EXPORT_FILE = 'scrobbles.pkl'
 
-REFRESH = True
+REFRESH = False
 
 def get_scrobbles(user, limit=200, page=1, extended=0):
     params = {'method': 'user.getRecentTracks',
@@ -88,9 +88,6 @@ def fill_data(df, results, last_date):
 
 if __name__ == '__main__':
     
-    #results = get_scrobbles(LASTFM_USER)
-    #jprint(results.json())
-    
     if not REFRESH:
         print('Reading pickle file...', end='')
         df = pd.read_pickle(EXPORT_FILE)
@@ -101,16 +98,16 @@ if __name__ == '__main__':
         cols.extend(FEATURES)
         df = pd.DataFrame(columns=cols)
         last_date = datetime.min
-    print('Fetching scrobbles...', end=' ')
     page = 1
     n_pages = np.Inf
     break_flag = False
+    print(f'Fetching scrobbles (n_page = {n_page})...', end=' ')
     while (page <= n_pages) and not break_flag:
         r = get_scrobbles(LASTFM_USER, page=page, limit=50)
         n_pages = int(r.json()['recenttracks']['@attr']['totalPages'])
         df, break_flag = fill_data(df, r, last_date)
         page += 1
-        print(f'█', end='')
+        print(f'{page}', end=',')
     df.sort_index(inplace=True)
     df.to_pickle(EXPORT_FILE, protocol=4)
     print(' done')
