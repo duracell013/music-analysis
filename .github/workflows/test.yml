@@ -30,6 +30,8 @@ jobs:
       - name: Run python script
         env:
           LASTFM_KEY: ${{ secrets.LASTFM_KEY }}
+          SPOTIPY_CLIENT_ID: ${{ secrets.SPOTIPY_CLIENT_ID }}
+          SPOTIPY_CLIENT_SECRET: ${{ secrets.SPOTIPY_CLIENT_SECRET }}
         run: |
           pip install -r .github/workflows/requirements.txt
           python lastfm_mini_exemple.py
