@@ -103,7 +103,7 @@ if __name__ == '__main__':
     page = 1
     n_pages = np.Inf
     break_flag = False
-    print(f'Fetching scrobbles (n_page = {n_page})...', end=' ')
+    print(f'Fetching scrobbles (n_pages = {n_pages})...', end=' ')
     while (page <= n_pages) and not break_flag:
         r = get_scrobbles(LASTFM_USER, page=page, limit=50)
         n_pages = int(r.json()['recenttracks']['@attr']['totalPages'])
