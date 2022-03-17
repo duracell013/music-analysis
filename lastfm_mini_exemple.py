@@ -103,10 +103,12 @@ if __name__ == '__main__':
     page = 1
     n_pages = np.Inf
     break_flag = False
-    print(f'Fetching scrobbles (n_pages = {n_pages})...', end=' ')
+    print('Fetching scrobbles...', end=' ')
     while (page <= n_pages) and not break_flag:
         r = get_scrobbles(LASTFM_USER, page=page, limit=50)
         n_pages = int(r.json()['recenttracks']['@attr']['totalPages'])
+        if page == 1:
+             print(f'{n_pages} page -', end=' ')
         df, break_flag = fill_data(df, r, last_date)
         page += 1
         print(f'{page}', end=',')
