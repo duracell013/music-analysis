@@ -33,7 +33,7 @@ jobs:
           SPOTIPY_CLIENT_ID: ${{ secrets.SPOTIPY_CLIENT_ID }}
           SPOTIPY_CLIENT_SECRET: ${{ secrets.SPOTIPY_CLIENT_SECRET }}
         run: |
-          pip install -r .github/workflows/requirements.txt
+          pip install -r requirements.txt
           python lastfm_mini_exemple.py
           git config user.name github-actions
           git config user.email github-actions@github.com
