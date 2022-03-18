@@ -45,6 +45,25 @@ def find_uri(artist, album, title):
             artist_uris.append(a['uri'])
         return track_uri, artist_uris
 
+def features(uri):
+    '''Get track features from Spotify'''
+    r = sp.audio_features(uri)
+    r = r[0]
+    if r:
+        features = {k: r[k] for k in FEATURES if k in r}
+    else:
+        features = None
+    return features
+
+
+def genres(artist_uris):
+    '''Get artists genres from Spotify'''
+    genres = []
+    for uri in artist_uris:
+        results = sp.artist(uri)
+        genres.extend(results['genres'])
+    return genres
+
 def get_scrobbles(limit=200, page=1, extended=0):
     '''Get Last.fm scrobbles'''
     params = {'method': 'user.getRecentTracks',
@@ -108,13 +127,13 @@ def fill_data(df, results, last_date):
                'track': track,
                'uri': track_uri,
                'tags': tags}
-##        if track_uri:
-##            f = features(track_uri)
-##            if f:
-##                dic.update(f)
-##            g = genres(artist_uris)
-##            if g:
-##                dic.update({'genres': g})
+        if track_uri:
+            f = features(track_uri)
+            if f:
+                dic.update(f)
+            g = genres(artist_uris)
+            if g:
+                dic.update({'genres': g})
         df.loc[date] = dic
     return df, break_flag
 
