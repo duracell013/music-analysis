@@ -20,7 +20,7 @@ REFRESH = True
 
 def connect_spotipy():
     print('Connecting to spotipy...', end=' ')
-    api = Spotify(client_credentials_manager=SpotifyClientCredentials())
+    api = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
     print('[OK]')
     return api
 
