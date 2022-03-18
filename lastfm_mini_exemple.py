@@ -18,10 +18,17 @@ EXPORT_FILE = 'scrobbles.pkl'
 
 REFRESH = True
 
-def get_scrobbles(user, limit=200, page=1, extended=0):
+def connect_spotipy():
+    print('Connecting to spotipy...', end=' ')
+    api Spotify(client_credentials_manager=SpotifyClientCredentials())
+    print('[OK]')
+    return api
+
+
+def get_scrobbles(limit=200, page=1, extended=0):
     params = {'method': 'user.getRecentTracks',
               'limit': limit,
-              'user': user,
+              'user': LASTFM_USER,
               'page': page,
               'extended': extended,
               'api_key': LASTFM_KEY,
@@ -36,6 +43,7 @@ def jprint(obj):
     # create a formatted string of the Python JSON object
     text = json.dumps(obj, sort_keys=True, indent=4)
     print(text)
+
 
 def get_tags(track, artist):
     params = {'method': 'track.getTopTags',
@@ -89,7 +97,10 @@ def fill_data(df, results, last_date):
     return df, break_flag
 
 if __name__ == '__main__':
-    
+            
+    # Connect to spotify
+    sp = connect_spotipy()
+
     if not REFRESH:
         print('Reading pickle file...', end='')
         df = pd.read_pickle(EXPORT_FILE)
@@ -105,7 +116,7 @@ if __name__ == '__main__':
     break_flag = False
     print('Fetching scrobbles...', end=' ')
     while (page <= n_pages) and not break_flag:
-        r = get_scrobbles(LASTFM_USER, page=page, limit=50)
+        r = get_scrobbles(page=page, limit=50)
         n_pages = int(r.json()['recenttracks']['@attr']['totalPages'])
         if page == 1:
              print(f'{n_pages} page -', end=' ')
