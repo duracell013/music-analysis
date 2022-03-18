@@ -6,6 +6,7 @@ from datetime import datetime
 import os
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+from time import sleep
 
 LASTFM_KEY = os.environ.get('LASTFM_KEY')
 LASTFM_URL = 'http://ws.audioscrobbler.com/2.0/'
@@ -73,10 +74,16 @@ def get_scrobbles(limit=200, page=1, extended=0):
               'extended': extended,
               'api_key': LASTFM_KEY,
               'format': 'json'}
-    r = requests.post(LASTFM_URL, params=params)
-    if not r.ok:
-        raise ValueError(r.json()['error'], r.json()['message'])
-    return r
+    tries = 5
+    while tries > 0:
+        r = requests.post(LASTFM_URL, params=params)
+        if r.ok:
+            return r
+        else:
+            print(f'Try {6-tries} - ERROR',r.json()['error'], r.json()['message'])
+            tries -= 1
+            sleep(2)
+    raise ValueError(r.json()['error'], r.json()['message'])
 
 
 def jprint(obj):
