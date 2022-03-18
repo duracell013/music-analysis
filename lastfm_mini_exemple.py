@@ -19,13 +19,34 @@ EXPORT_FILE = 'scrobbles.pkl'
 REFRESH = True
 
 def connect_spotipy():
+    '''Connect to Spotify API'''
     print('Connecting to spotipy...', end=' ')
     api = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
     print('[OK]')
     return api
 
+def find_uri(artist, album, title):
+    '''Find Spotify track and artists URI'''
+    artist = artist.replace('.', ' ').replace('&', ' ')
+    album = album.replace('.', ' ').replace('&', ' ')
+    title = title.replace('.', ' ').replace('&', ' ')
+    if '(feat.' in title:
+        title = title[:title.find('(feat.')]
+    results = sp.search(q=f'track:{title} artist:{artist} album:{album}',
+                        type='track')
+    if results['tracks']['total'] == 0:
+        results = sp.search(q=f'track:{title} artist:{artist}', type='track')
+    if results['tracks']['total'] == 0:
+        return None, None
+    else:
+        track_uri = results['tracks']['items'][0]['uri']
+        artist_uris = []
+        for a in results['tracks']['items'][0]['artists']:
+            artist_uris.append(a['uri'])
+        return track_uri, artist_uris
 
 def get_scrobbles(limit=200, page=1, extended=0):
+    '''Get Last.fm scrobbles'''
     params = {'method': 'user.getRecentTracks',
               'limit': limit,
               'user': LASTFM_USER,
@@ -40,7 +61,7 @@ def get_scrobbles(limit=200, page=1, extended=0):
 
 
 def jprint(obj):
-    # create a formatted string of the Python JSON object
+    '''Create a formatted string of the Python JSON object'''
     text = json.dumps(obj, sort_keys=True, indent=4)
     print(text)
 
@@ -63,6 +84,7 @@ def get_tags(track, artist):
             tags.append(tag['name'])
     return tags
 
+
 def fill_data(df, results, last_date):
     break_flag = False
     for t in results.json()['recenttracks']['track']:
@@ -79,12 +101,12 @@ def fill_data(df, results, last_date):
         artist = t['artist']['#text']
         album = t['album']['#text']
         track = t['name']
-        #track_uri, artist_uris = find_uri(artist, album, track)
+        track_uri, artist_uris = find_uri(artist, album, track)
         tags = get_tags(track, artist)
         dic = {'artist': artist,
                'album': album,
                'track': track,
-               #'uri': track_uri,
+               'uri': track_uri,
                'tags': tags}
 ##        if track_uri:
 ##            f = features(track_uri)
