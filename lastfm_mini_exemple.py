@@ -20,7 +20,7 @@ REFRESH = True
 
 def connect_spotipy():
     print('Connecting to spotipy...', end=' ')
-    api Spotify(client_credentials_manager=SpotifyClientCredentials())
+    api = Spotify(client_credentials_manager=SpotifyClientCredentials())
     print('[OK]')
     return api
 
@@ -102,10 +102,10 @@ if __name__ == '__main__':
     sp = connect_spotipy()
 
     if not REFRESH:
-        print('Reading pickle file...', end='')
+        print('Reading pickle file...', end=' ')
         df = pd.read_pickle(EXPORT_FILE)
         last_date = df.index.max()
-        print(f' done (last entry = {last_date})')
+        print(f'[OK] (last entry = {last_date})')
     else:
         cols = ['artist', 'album', 'track', 'uri', 'tags', 'genres']
         cols.extend(FEATURES)
