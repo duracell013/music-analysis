@@ -17,7 +17,7 @@ FEATURES = ['acousticness', 'danceability', 'energy', 'instrumentalness',
 
 EXPORT_FILE = 'scrobbles.pkl'
 
-REFRESH = True
+REFRESH = False
 
 def connect_spotipy():
     '''Connect to Spotify API'''
