@@ -168,10 +168,10 @@ if __name__ == '__main__':
         r = get_scrobbles(page=page, limit=50)
         n_pages = int(r.json()['recenttracks']['@attr']['totalPages'])
         if page == 1:
-             print(f'{n_pages} page -', end=' ')
+             print(f'{n_pages} pages in total -', end=' ')
         df, break_flag = fill_data(df, r, last_date)
-        page += 1
         print(f'{page}', end=',')
+        page += 1
     df.sort_index(inplace=True)
     df.to_pickle(EXPORT_FILE, protocol=4)
     print(' done')
