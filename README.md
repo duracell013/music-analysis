@@ -1,2 +1,2 @@
 # music-analysis
-This script retrieves steamed track from Last.fm (scrobbles) and obtain additional info from Spotify (features, genres).
+This script retrieves streamed tracks from Last.fm (scrobbles) and obtains additional info from Spotify (features, genres).
