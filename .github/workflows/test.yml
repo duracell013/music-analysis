@@ -34,7 +34,7 @@ jobs:
           SPOTIPY_CLIENT_SECRET: ${{ secrets.SPOTIPY_CLIENT_SECRET }}
         run: |
           pip install -r requirements.txt
-          python lastfm_mini_exemple.py
+          python process_scrobbles.py
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add scrobbles.pkl
