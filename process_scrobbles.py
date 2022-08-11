@@ -31,10 +31,9 @@ def connect_spotipy():
 def sanitize(string):
     '''Remove special characters from string to make HTTP query'''
     string = unidecode(string)
-    chars = '.&()'
+    chars = ['.', '&', '  ']
     for i in chars:
         string = string.replace(i, ' ')
-    string = string.replace('  ', ' ')
     return string.strip()
 
 def find_uri(artist, album, title):
@@ -44,8 +43,12 @@ def find_uri(artist, album, title):
     artist = sanitize(artist)
     album = sanitize(album)
     title = sanitize(title)
-    results = sp.search(q=f'track:{title} artist:{artist} album:{album}',
-                        type='track')
+    query = f'track:{title} artist:{artist} album:{album}'
+    if len(query) > 100:
+        query = f'track:{title} artist:{artist}'
+    if len(query) > 100:
+        query = f'track:{title}'
+    results = sp.search(q=query, type='track')
     if results['tracks']['total'] == 0:
         results = sp.search(q=f'track:{title} artist:{artist}', type='track')
     if results['tracks']['total'] == 0:
