@@ -34,7 +34,8 @@ def sanitize(string):
     chars = '.&()'
     for i in chars:
         string = string.replace(i, ' ')
-    return string
+    string = string.replace('  ', ' ')
+    return string.strip()
 
 def find_uri(artist, album, title):
     '''Find Spotify track and artists URI'''
