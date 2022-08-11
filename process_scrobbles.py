@@ -7,6 +7,7 @@ import os
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from time import sleep
+from unidecode import unidecode
 
 LASTFM_KEY = os.environ.get('LASTFM_KEY')
 LASTFM_URL = 'http://ws.audioscrobbler.com/2.0/'
@@ -27,13 +28,21 @@ def connect_spotipy():
     print('[OK]')
     return api
 
+def sanitize(string):
+    '''Remove special characters from string to make HTTP query'''
+    string = unidecode(string)
+    chars = '.&()'
+    for i in chars:
+        string = string.replace(i, ' ')
+    return string
+
 def find_uri(artist, album, title):
     '''Find Spotify track and artists URI'''
-    artist = artist.replace('.', ' ').replace('&', ' ')
-    album = album.replace('.', ' ').replace('&', ' ')
-    title = title.replace('.', ' ').replace('&', ' ')
     if '(feat.' in title:
         title = title[:title.find('(feat.')]
+    artist = sanitize(artist)
+    album = sanitize(album)
+    title = sanitize(title)
     results = sp.search(q=f'track:{title} artist:{artist} album:{album}',
                         type='track')
     if results['tracks']['total'] == 0:
