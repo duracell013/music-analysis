@@ -1,4 +1,4 @@
-import spotify
+import spotify_class
 
 import requests
 import json
@@ -94,7 +94,7 @@ def fill_data(df, results, last_date):
         artist = t['artist']['#text']
         album = t['album']['#text']
         track = t['name']
-        track_uri, artist_uris = spotify.find_uri(sp, artist, album, track)
+        track_uri, artist_uris = sp.find_uri(artist, album, track)
         tags = get_tags(track, artist)
         dic = {'artist': artist,
                'album': album,
@@ -102,10 +102,10 @@ def fill_data(df, results, last_date):
                'uri': track_uri,
                'tags': tags}
         if track_uri:
-            f = spotify.features(sp, track_uri)
+            f = sp.features(track_uri)
             if f:
                 dic.update(f)
-            g = spotify.genres(sp, artist_uris)
+            g = sp.genres(artist_uris)
             if g:
                 dic.update({'genres': g})
         df.loc[date] = dic
@@ -114,7 +114,7 @@ def fill_data(df, results, last_date):
 if __name__ == '__main__':
             
     # Connect to spotify
-    sp = spotify.create_api()
+    sp = Spotify()
 
     if not REFRESH:
         print('Reading pickle file...', end=' ')
