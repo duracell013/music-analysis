@@ -155,7 +155,7 @@ def fill_data(df, results, last_date):
 if __name__ == '__main__':
             
     # Connect to spotify
-    sp = connect_spotipy()
+    sp = spotify.create_api()
 
     if not REFRESH:
         print('Reading pickle file...', end=' ')
