@@ -105,7 +105,7 @@ def fill_data(df, results, last_date):
             f = spotify.features(sp, track_uri)
             if f:
                 dic.update(f)
-            g = genres(artist_uris)
+            g = spotify.genres(sp, artist_uris)
             if g:
                 dic.update({'genres': g})
         df.loc[date] = dic
