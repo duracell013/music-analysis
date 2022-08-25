@@ -1,3 +1,5 @@
+import spotify
+
 import requests
 import json
 import pandas as pd
@@ -19,14 +21,6 @@ FEATURES = ['acousticness', 'danceability', 'energy', 'instrumentalness',
 EXPORT_FILE = 'scrobbles.pkl'
 
 REFRESH = False
-
-def connect_spotipy():
-    '''Connect to Spotify API'''
-    print('Connecting to spotipy...', end=' ')
-    api = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(),
-                          requests_timeout=10, retries=10)
-    print('[OK]')
-    return api
 
 def sanitize(string):
     '''Remove special characters from string to make HTTP query'''
