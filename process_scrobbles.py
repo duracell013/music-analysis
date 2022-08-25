@@ -3,7 +3,6 @@ import spotify
 import requests
 import json
 import pandas as pd
-import numpy as np
 from datetime import datetime
 import os
 from time import sleep
@@ -115,15 +114,16 @@ if __name__ == '__main__':
         cols.extend(FEATURES)
         df = pd.DataFrame(columns=cols)
         last_date = datetime.min
-    page = 1
-    n_pages = np.Inf
-    break_flag = False
+
     print('Fetching scrobbles...', end=' ')
+
+    n_pages = int(r.json()['recenttracks']['@attr']['totalPages'])
+    print(f'{n_pages} pages in total -', end=' ')
+
+    page = 1
+    break_flag = False
     while (page <= n_pages) and not break_flag:
-        r = get_scrobbles(page=page, limit=50)
-        n_pages = int(r.json()['recenttracks']['@attr']['totalPages'])
-        if page == 1:
-             print(f'{n_pages} pages in total -', end=' ')
+        r = get_scrobbles(page=page, limit=50)  
         df, break_flag = fill_data(df, r, last_date)
         print(f'{page}', end=',')
         page += 1
