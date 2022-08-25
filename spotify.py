@@ -61,7 +61,7 @@ class Spotify:
         df = pd.DataFrame(columns=['artist', 'album', 'track'])
         limit = 100
         offset = 0
-        tracks = self.api.playlist_tracks(playlist_id, offset=offset, limit=1)
+        tracks = self.api.playlist_tracks(playlist_id, offset=offset, limit=limit)
         total = tracks['total']
         while offset < total:
             tracks = self.api.playlist_tracks(playlist_id,
@@ -91,7 +91,7 @@ def track_info(track):
 
 
 if __name__ == '__main__':
-    
+
     playlist_id = '0k5hJzzAvLllBUJYEJddJT'  # Gilles Peterson Worldwide Radio
 
     sp = Spotify()
