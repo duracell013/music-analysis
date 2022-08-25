@@ -11,7 +11,6 @@ class Spotify:
         self.api = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(),
                                    requests_timeout=10, retries=10)
         print('[OK]')
-        return api
 
     def find_uri(self, artist, album, title):
         '''Find Spotify track and artists URI'''
