@@ -114,7 +114,7 @@ def fill_data(df, results, last_date):
 if __name__ == '__main__':
             
     # Connect to spotify
-    sp = Spotify()
+    sp = spotify_class.Spotify()
 
     if not REFRESH:
         print('Reading pickle file...', end=' ')
