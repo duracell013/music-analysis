@@ -1,4 +1,4 @@
-import spotify_class
+import spotify
 
 import requests
 import json
@@ -6,8 +6,6 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import os
-import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
 from time import sleep
 from unidecode import unidecode
 
@@ -29,8 +27,6 @@ def sanitize(string):
     for i in chars:
         string = string.replace(i, ' ')
     return string.strip()
-
-
 
 def get_scrobbles(limit=200, page=1, extended=0):
     '''Get Last.fm scrobbles'''
@@ -114,7 +110,7 @@ def fill_data(df, results, last_date):
 if __name__ == '__main__':
             
     # Connect to spotify
-    sp = spotify_class.Spotify()
+    sp = spotify.Spotify()
 
     if not REFRESH:
         print('Reading pickle file...', end=' ')
