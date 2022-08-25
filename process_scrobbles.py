@@ -30,48 +30,7 @@ def sanitize(string):
         string = string.replace(i, ' ')
     return string.strip()
 
-def find_uri(artist, album, title):
-    '''Find Spotify track and artists URI'''
-    if '(feat.' in title:
-        title = title[:title.find('(feat.')]
-    artist = sanitize(artist)
-    album = sanitize(album)
-    title = sanitize(title)
-    query = f'track:{title} artist:{artist} album:{album}'
-    if len(query) > 100:
-        query = f'track:{title} artist:{artist}'
-    if len(query) > 100:
-        query = f'track:{title}'
-    results = sp.search(q=query, type='track')
-    if results['tracks']['total'] == 0:
-        results = sp.search(q=f'track:{title} artist:{artist}', type='track')
-    if results['tracks']['total'] == 0:
-        return None, None
-    else:
-        track_uri = results['tracks']['items'][0]['uri']
-        artist_uris = []
-        for a in results['tracks']['items'][0]['artists']:
-            artist_uris.append(a['uri'])
-        return track_uri, artist_uris
 
-def features(uri):
-    '''Get track features from Spotify'''
-    r = sp.audio_features(uri)
-    r = r[0]
-    if r:
-        features = {k: r[k] for k in FEATURES if k in r}
-    else:
-        features = None
-    return features
-
-
-def genres(artist_uris):
-    '''Get artists genres from Spotify'''
-    genres = []
-    for uri in artist_uris:
-        results = sp.artist(uri)
-        genres.extend(results['genres'])
-    return genres
 
 def get_scrobbles(limit=200, page=1, extended=0):
     '''Get Last.fm scrobbles'''
@@ -135,7 +94,7 @@ def fill_data(df, results, last_date):
         artist = t['artist']['#text']
         album = t['album']['#text']
         track = t['name']
-        track_uri, artist_uris = find_uri(artist, album, track)
+        track_uri, artist_uris = spotify.find_uri(sp, artist, album, track)
         tags = get_tags(track, artist)
         dic = {'artist': artist,
                'album': album,
@@ -143,7 +102,7 @@ def fill_data(df, results, last_date):
                'uri': track_uri,
                'tags': tags}
         if track_uri:
-            f = features(track_uri)
+            f = spotify.features(sp, track_uri)
             if f:
                 dic.update(f)
             g = genres(artist_uris)
