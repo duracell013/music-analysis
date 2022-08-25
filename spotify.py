@@ -1,5 +1,8 @@
 # Spotify wrapper
 
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
+
 def create_api():
     '''Connect to Spotify API'''
     print('Connecting to spotipy...', end=' ')
