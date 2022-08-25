@@ -20,13 +20,6 @@ EXPORT_FILE = 'scrobbles.pkl'
 
 REFRESH = False
 
-def sanitize(string):
-    '''Remove special characters from string to make HTTP query'''
-    string = unidecode(string)
-    chars = ['.', '&', '  ']
-    for i in chars:
-        string = string.replace(i, ' ')
-    return string.strip()
 
 def get_scrobbles(limit=200, page=1, extended=0):
     '''Get Last.fm scrobbles'''
