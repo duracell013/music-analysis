@@ -185,7 +185,7 @@ for cat_id, video_ids in categorized_groups.items():
             
     new_vids = [vid for vid in video_ids if vid not in existing_vids]
     if new_vids:
-        # Chunk additions into batches of 50 to prevent API rejection/timeouts on large lists
+        # Chunk additions into batches to prevent API rejection/timeouts on large lists
         BATCH_SIZE = 10
         added_count = 0
         for i in range(0, len(new_vids), BATCH_SIZE):
@@ -193,16 +193,29 @@ for cat_id, video_ids in categorized_groups.items():
             try:
                 ytm.add_playlist_items(playlist_id, chunk)
                 added_count += len(chunk)
-                time.sleep(5)
+                time.sleep(2)
             except Exception as e:
                 print(f"Error adding batch to '{playlist_name}': {e}")
         print(f"Added {added_count} new tracks to playlist '{playlist_name}'.")
 
-    try:
-        final_playlist_data = ytm.get_playlist(playlist_id, limit=1000)
-        actual_count = len(final_playlist_data.get("tracks", []))
-        print(f"Playlist '{playlist_name}' now contains {actual_count} tracks on YouTube Music.")
-    except Exception as e:
-        print(f"Could not verify final count for '{playlist_name}': {e}")
+# 8. Verification Report: Compare JSONL counts vs YouTube Music counts
+print("\n--- Playlist Verification Report ---")
+for cat_id, expected_video_ids in categorized_groups.items():
+    playlist_name = category_map.get(cat_id, cat_id)
+    playlist_id = playlist_map.get(playlist_name)
+    expected_count = len(expected_video_ids)
+    
+    if playlist_id:
+        try:
+            playlist_data = ytm.get_playlist(playlist_id, limit=1000)
+            actual_tracks = playlist_data.get("tracks", [])
+            actual_count = len(actual_tracks)
+            
+            status = "MATCH" if expected_count == actual_count else "MISMATCH"
+            print(f"[{status}] {playlist_name}: Expected {expected_count} (JSONL), Found {actual_count} (YTM)")
+        except Exception as e:
+            print(f"[ERROR] Could not verify '{playlist_name}': {e}")
+    else:
+        print(f"[MISSING] Playlist '{playlist_name}' not found in map.")
 
 print("Pipeline execution complete.")
