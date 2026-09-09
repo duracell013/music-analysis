@@ -177,10 +177,16 @@ for cat_id, video_ids in categorized_groups.items():
         print(f"Playlist {playlist_name} already existing")
         playlist_id = playlist_map[playlist_name]
 
-    # Fetch existing tracks in playlist to prevent duplicates
-    playlist_items = ytm.get_playlist(playlist_id, limit=1000).get("tracks", [])
-    existing_vids = {item["videoId"] for item in playlist_items if item.get("videoId")}
-    
+    # If it's a brand new playlist, we know it's empty. Otherwise, fetch existing tracks.
+    existing_vids = set()
+    if not is_new_playlist:
+        try:
+            playlist_data = ytm.get_playlist(playlist_id, limit=1000)
+            playlist_items = playlist_data.get("tracks", [])
+            existing_vids = {item.get("videoId") or item.get("id") for item in playlist_items if item}
+        except Exception as e:
+            print(f"Warning: Could not fetch tracks for existing playlist '{playlist_name}': {e}")
+            
     new_vids = [vid for vid in video_ids if vid not in existing_vids]
     if new_vids:
         ytm.add_playlist_items(playlist_id, new_vids)
