@@ -146,7 +146,9 @@ print(f"Saved total {len(all_tracks)} tracks to {TRACKS_FILE}.")
 
 # 7. Update YouTube Music Playlists
 print("Syncing playlists with YouTube Music...")
-user_playlists = ytm.get_user_playlists(limit=50)
+
+# Fetch all playlists from your authenticated library
+user_playlists = ytm.get_library_playlists(limit=100)
 playlist_map = {p["title"]: p["playlistId"] for p in user_playlists}
 
 # Group videoIds by category
@@ -162,7 +164,10 @@ for cat_id, video_ids in categorized_groups.items():
     
     # Get or create playlist
     if playlist_name not in playlist_map:
-        playlist_id = ytm.create_playlist(title=playlist_name, description=f"Auto-generated playlist for {playlist_name}")
+        playlist_id = ytm.create_playlist(
+            title=playlist_name, 
+            description=f"Auto-generated playlist for {playlist_name}"
+        )
         playlist_map[playlist_name] = playlist_id
     else:
         playlist_id = playlist_map[playlist_name]
