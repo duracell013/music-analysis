@@ -1,7 +1,14 @@
 import os
+import time
 import json
 from pathlib import Path
 from ytmusicapi import YTMusic
+from typing import List, Optional
+from pydantic import BaseModel, Field
+from google import genai
+
+CATEGORIES_FILE = Path("data/categories.json")
+TRACKS_FILE = Path("data/categorized_tracks.jsonl")
 
 # 1. Setup YTMusic authentication (Environment Secret vs. Local File)
 ytm_secret = os.getenv("YTM_BROWSER_JSON")
