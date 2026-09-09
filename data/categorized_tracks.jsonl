@@ -476,7 +476,7 @@
 {"id": "Emeclwix8Ig", "title": "In Remembrance Of Those Fallen", "artist": "Sons Of Kemet", "album": "Black To The Future", "duration_seconds": 307, "is_available": true, "category_id": "contemporary_uk_jazz_fusion"}
 {"id": "hDgPW4kIdUI", "title": "Bitch, Don’t Kill My Vibe", "artist": "Kendrick Lamar", "album": "good kid, m.A.A.d. city", "duration_seconds": 311, "is_available": true, "category_id": "us_hiphop_abstract_rap"}
 {"id": "P552mJPQTA0", "title": "Pace (Moses Boyd Remix)", "artist": "Nubya Garcia", "album": "Pace (Moses Boyd Remix)", "duration_seconds": 313, "is_available": true, "category_id": "contemporary_uk_jazz_fusion"}
-{"id": "s3SZ5sIMY6o", "title": "The Imperial March (Darth Vader's Theme)", "artist": "John Williams, London Symphony Orchestra", "album": "Star Wars: The Empire Strikes Back (Original Motion Picture Soundtrack)", "duration_seconds": 180, "is_available": true, "category_id": null}
+{"id": "s3SZ5sIMY6o", "title": "The Imperial March (Darth Vader's Theme)", "artist": "John Williams, London Symphony Orchestra", "album": "Star Wars: The Empire Strikes Back (Original Motion Picture Soundtrack)", "duration_seconds": 180, "is_available": true, "category_id": "modern_classical_neo_classical"}
 {"id": "NdPetd7UjDQ", "title": "Mak", "artist": "Błoto", "album": "Kwiatostan", "duration_seconds": 296, "is_available": true, "category_id": "contemporary_uk_jazz_fusion"}
 {"id": "jjY3UROvT24", "title": "Das Wort (ft. Dirk von Lowtzow)", "artist": "DJ Koze", "album": "Amygdala", "duration_seconds": 393, "is_available": true, "category_id": "minimal_techno_microhouse"}
 {"id": "NT1aFEDdAQU", "title": "Lost In Thought", "artist": "Jon Hopkins", "album": "Opalescent", "duration_seconds": 377, "is_available": true, "category_id": "idm_glitch_experimental_electronics"}
@@ -559,7 +559,7 @@
 {"id": "j7vcNfy_r_I", "title": "A Certain Trip", "artist": "Guillaume Perret", "album": "A Certain Trip", "duration_seconds": 389, "is_available": true, "category_id": "contemporary_uk_jazz_fusion"}
 {"id": "gDjmfe5EMN4", "title": "Show Me a Prison (feat. Angela Davis & J Hoard)", "artist": "Kassa Overall", "album": "I THINK I'M GOOD", "duration_seconds": 223, "is_available": true, "category_id": "modal_avant_garde_classic_jazz"}
 {"id": "k67rIqylij4", "title": "My Friend (feat. Arto Lindsay)", "artist": "Kassa Overall", "album": "Go Get Ice Cream and Listen to Jazz", "duration_seconds": 279, "is_available": true, "category_id": "modal_avant_garde_classic_jazz"}
-{"id": "k2fX8GyvHsU", "title": "Planet (Live at Funkhaus Berlin, 10th May 2018)", "artist": "4TLR", "album": "Live at Funkhaus Berlin, 10th May 2018", "duration_seconds": 549, "is_available": true, "category_id": null}
+{"id": "k2fX8GyvHsU", "title": "Planet (Live at Funkhaus Berlin, 10th May 2018)", "artist": "4TLR", "album": "Live at Funkhaus Berlin, 10th May 2018", "duration_seconds": 549, "is_available": true, "category_id": "minimal_techno_microhouse"}
 {"id": "NUwM5AxAXw8", "title": "Dans la légende", "artist": "Fonky Family", "album": "Art de rue", "duration_seconds": 251, "is_available": true, "category_id": "grime_uk_drill_british_rap"}
 {"id": "VWJcRqvo_rA", "title": "I Believe in You", "artist": "Yoshinori Hayashi", "album": "Pulse Of Defiance", "duration_seconds": 445, "is_available": true, "category_id": "minimal_techno_microhouse"}
 {"id": "2uNvbigdTEA", "title": "Aspects", "artist": "STR4TA", "album": "Aspects", "duration_seconds": 467, "is_available": true, "category_id": "contemporary_uk_jazz_fusion"}
