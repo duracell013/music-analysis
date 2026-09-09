@@ -1,0 +1,164 @@
+{
+  "categories": [
+    {
+      "id": "contemporary_uk_jazz_fusion",
+      "name": "~ Contemporary UK Jazz & Modern Fusion",
+      "rationale": "Captures the current wave of modern jazz, acoustic-electronic crossover, and spiritual groove-driven jazz coming primarily out of London, Bristol, and Chicago.",
+      "examples": [
+        "Blacked Out by Yussef Dayes, Alfa Mist",
+        "Source by Nubya Garcia",
+        "You Can't Steal My Joy by Ezra Collective"
+      ]
+    },
+    {
+      "id": "modal_avant_garde_classic_jazz",
+      "name": "~ Modal, Avant-Garde & Classic Jazz",
+      "rationale": "Dedicated to the masters of bebop, hard bop, modal jazz, and radical avant-garde/free-jazz improvisations.",
+      "examples": [
+        "Equinox by John Coltrane",
+        "Spanish Key by Miles Davis",
+        "Arab And Jew by John Zorn"
+      ]
+    },
+    {
+      "id": "deep_dubstep_140_uk_bass",
+      "name": "~ Deep Dubstep & 140 UK Bass",
+      "rationale": "Heavy sub-bass vibrations, half-step rhythms, sound system dubplates, and dark atmospheric 140 BPM soundscapes.",
+      "examples": [
+        "Midnight Request Line by Skream",
+        "Sleepwave by Commodo",
+        "Disco Rekah by Loefah"
+      ]
+    },
+    {
+      "id": "grime_uk_drill_british_rap",
+      "name": "~ Grime, UK Drill & British Rap",
+      "rationale": "Fast-paced UK flow, grime MCing, drill baselines, and gritty street poetry from the British rap landscape.",
+      "examples": [
+        "Shut Up by Stormzy",
+        "96 Bars of JME by Jme",
+        "BLESSED (feat. Dizzee Rascal) by Ocean Wisdom"
+      ]
+    },
+    {
+      "id": "idm_glitch_experimental_electronics",
+      "name": "~ IDM, Glitch & Experimental Electronics",
+      "rationale": "Intricate beat patterns, brain-dance melodies, complex synthesis, and acoustic-digital manipulation.",
+      "examples": [
+        "Windowlicker by Aphex Twin",
+        "K2 Central by Squarepusher",
+        "Flyby VFR by Skee Mask"
+      ]
+    },
+    {
+      "id": "minimal_techno_microhouse",
+      "name": "~ Minimal Techno & Microhouse",
+      "rationale": "Long-form, subtle, hypnotizing club tracks featuring stripped-back kick drums, micro-samples, and deep dance floor grooves.",
+      "examples": [
+        "Que bel epoque 2006 by Ricardo Villalobos",
+        "Burn with Me (Victoria Edit) by DJ Koze",
+        "Time For Us by Nicolás Jaar"
+      ]
+    },
+    {
+      "id": "organic_house_folktronica",
+      "name": "~ Organic House & Folktronica",
+      "rationale": "Warm, emotive, atmospheric dance music incorporating field recordings, acoustic instruments, and lush synth pads.",
+      "examples": [
+        "Cirrus by Bonobo",
+        "Parallel Jalebi by Four Tet",
+        "Reflections - Mojave Desert Continuous Mix by Floating Points"
+      ]
+    },
+    {
+      "id": "industrial_techno_darkwave",
+      "name": "~ Industrial Techno & Darkwave",
+      "rationale": "Aggressive synth basslines, driving mechanical beats, electro-clash energy, and dark club textures.",
+      "examples": [
+        "Control Movement by Gesaffelstein",
+        "Decade of Agression by Arnaud Rebotini",
+        "4 Floors of Whores by Tzusing"
+      ]
+    },
+    {
+      "id": "modern_classical_neo_classical",
+      "name": "~ Modern Classical & Neo-Classical",
+      "rationale": "Acoustic piano explorations, subtle string arrangements, ambient textures, and minimalist modern compositions.",
+      "examples": [
+        "Right Right Right (Paris) by Nils Frahm",
+        "Passaggio by Ludovico Einaudi",
+        "Tunglið by Ólafur Arnalds"
+      ]
+    },
+    {
+      "id": "post_rock_math_rock_alternative",
+      "name": "~ Post-Rock, Math Rock & Alternative",
+      "rationale": "Dynamic, crescendo-building instrumental rock, angular math-rock guitar riffs, and atmospheric alt-rock.",
+      "examples": [
+        "Good Morning, Captain by Slint",
+        "Mogwai Fear Satan by Mogwai",
+        "We Drift Like Worried Fire by Godspeed You Black Emperor!"
+      ]
+    },
+    {
+      "id": "afrobeat_highlife_afro_jazz",
+      "name": "~ Afrobeat, Highlife & Afro-Jazz",
+      "rationale": "Driving brass horn sections, interlocking guitar grooves, polyrhythmic drumming, and African funk/soul heritage.",
+      "examples": [
+        "Zombie (feat. Afrika 70) by Fela Kuti",
+        "Afrodisco Beat by Tony Allen With Africa 70",
+        "Brothers On The Slide by Cymande"
+      ]
+    },
+    {
+      "id": "global_bass_organic_downtempo",
+      "name": "~ Global Bass & Organic Downtempo",
+      "rationale": "Electronic fusion blending Indigenous South American, Middle Eastern, and North African instrumentation with slow electronic beats.",
+      "examples": [
+        "Colibria by Nicola Cruz",
+        "Dubcharaca by Dengue Dengue Dengue",
+        "Aura by Guedra Guedra"
+      ]
+    },
+    {
+      "id": "roots_reggae_dub_system",
+      "name": "~ Roots Reggae & Dub System",
+      "rationale": "Classic Jamaican roots reggae, studio dub echo-chamber experiments, and dub poetry sound system classics.",
+      "examples": [
+        "I Chase the Devil by Max Romeo, The Upsetters",
+        "Pass The Dutchie by Musical Youth",
+        "Orderliness, Godliness, Discipline And Dignity by African Head Charge"
+      ]
+    },
+    {
+      "id": "us_hiphop_abstract_rap",
+      "name": "~ US Hip-Hop & Abstract Rap",
+      "rationale": "West Coast classics, Golden Era boom-bap, experimental US rap, and lyric-driven hip-hop.",
+      "examples": [
+        "m.A.A.d city (feat. MC Eiht) by Kendrick Lamar",
+        "Ambitionz Az A Ridah by 2Pac",
+        "either on or off the drugs by JPEGMAFIA"
+      ]
+    },
+    {
+      "id": "chanson_francaise_french_pop",
+      "name": "~ Chanson Française & French Pop",
+      "rationale": "French-language lyricism, classical chanson, French hip-hop, and indie-synth pop.",
+      "examples": [
+        "Le Plat Pays by Jacques Brel",
+        "Nés sous la même étoile by IAM",
+        "Paradis Perdus by Christine and the Queens"
+      ]
+    },
+    {
+      "id": "art_pop_folk_singer_songwriter",
+      "name": "~ Art Pop, Folk & Singer-Songwriter",
+      "rationale": "Vocal-led indie pop, acoustic folk, soul-infused ballads, and art-pop arrangements.",
+      "examples": [
+        "Mushaboom by Feist",
+        "Space Oddity by David Bowie",
+        "Fistful Of Love by Antony and the Johnsons, ANOHNI"
+      ]
+    }
+  ]
+}
