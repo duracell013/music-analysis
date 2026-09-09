@@ -63,7 +63,7 @@ for song in liked_songs:
 
     if key not in existing_keys:
         new_track = {
-            "videoId": song.get("videoId"),
+            "id": song.get("videoId"),
             "title": title,
             "artist": artists,
             "album": song.get("album", {}).get("name") if song.get("album") else None,
@@ -157,7 +157,7 @@ print(json.dumps(category_map, indent=2))
 categorized_groups = {}
 for track in all_tracks:
     cat_id = track.get("category_id")
-    video_id = track.get("videoId")
+    video_id = track.get("id")
     if cat_id and video_id:
         categorized_groups.setdefault(cat_id, []).append(video_id)
 print(categorized_groups)
