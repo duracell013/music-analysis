@@ -198,4 +198,11 @@ for cat_id, video_ids in categorized_groups.items():
                 print(f"Error adding batch to '{playlist_name}': {e}")
         print(f"Added {added_count} new tracks to playlist '{playlist_name}'.")
 
+    try:
+        final_playlist_data = ytm.get_playlist(playlist_id, limit=1000)
+        actual_count = len(final_playlist_data.get("tracks", []))
+        print(f"Playlist '{playlist_name}' now contains {actual_count} tracks on YouTube Music.")
+    except Exception as e:
+        print(f"Could not verify final count for '{playlist_name}': {e}")
+
 print("Pipeline execution complete.")
