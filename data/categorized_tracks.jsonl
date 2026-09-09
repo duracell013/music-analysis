@@ -413,7 +413,7 @@
 {"id": "1SHW0QKox84", "title": "Soopertrack", "artist": "Extrawelt", "album": "Soopertrack", "duration_seconds": 480, "is_available": true, "category_id": "minimal_techno_microhouse"}
 {"id": "n1DXS5LNJWM", "title": "I Dunno (feat. Dutchavelli & Stormzy)", "artist": "Tion Wayne", "album": "I Dunno", "duration_seconds": 179, "is_available": true, "category_id": "grime_uk_drill_british_rap"}
 {"id": "A95hmkBdgW8", "title": "Made To Stray", "artist": "Mount Kimbie", "album": "Cold Spring Fault Less Youth", "duration_seconds": 287, "is_available": true, "category_id": "idm_glitch_experimental_electronics"}
-{"id": "uNKOay0cfDk", "title": "The Inside Man (Soopasoul remix)", "artist": "Funky Destination", "album": "Revolution Is Only Solution", "duration_seconds": 441, "is_available": true, "category_id": null}
+{"id": "uNKOay0cfDk", "title": "The Inside Man (Soopasoul remix)", "artist": "Funky Destination", "album": "Revolution Is Only Solution", "duration_seconds": 441, "is_available": true, "category_id": "afrobeat_highlife_afro_jazz"}
 {"id": "4Pi8SPeGtuM", "title": "We Don't Dance / Gbg (feat. Stickz)", "artist": "M24", "album": "We Don't Dance / Gbg", "duration_seconds": 188, "is_available": true, "category_id": "grime_uk_drill_british_rap"}
 {"id": "hyTIZ4I9ok8", "title": "Vocoder", "artist": "Floating Points", "album": "Grammar", "duration_seconds": 455, "is_available": true, "category_id": "idm_glitch_experimental_electronics"}
 {"id": "m8bCgLIVU-E", "title": "Never Been", "artist": "Dub Phizix, Fox", "album": "Never Been", "duration_seconds": 368, "is_available": true, "category_id": "deep_dubstep_140_uk_bass"}
@@ -441,7 +441,7 @@
 {"id": "nq0kSCXtASQ", "title": "Roki", "artist": "Zed-U", "album": "Night Time On The Middle Passage", "duration_seconds": 419, "is_available": true, "category_id": "contemporary_uk_jazz_fusion"}
 {"id": "3s6JWxtWjpQ", "title": "IC3 (feat. Skepta)", "artist": "Ghetts", "album": "Conflict Of Interest", "duration_seconds": 229, "is_available": true, "category_id": "grime_uk_drill_british_rap"}
 {"id": "o7sqZE1RZjw", "title": "Don't Be Dumb", "artist": "Dizzee Rascal, Ocean Wisdom", "album": "E3 AF", "duration_seconds": 212, "is_available": true, "category_id": "grime_uk_drill_british_rap"}
-{"id": "c7wlUxlZ6J4", "title": "Stack The Deck", "artist": "El Michels Affair, Bobby Oroza", "album": "Stack The Deck", "duration_seconds": 202, "is_available": true, "category_id": null}
+{"id": "c7wlUxlZ6J4", "title": "Stack The Deck", "artist": "El Michels Affair, Bobby Oroza", "album": "Stack The Deck", "duration_seconds": 202, "is_available": true, "category_id": "afrobeat_highlife_afro_jazz"}
 {"id": "Dnkoy6bXF8w", "title": "Oh My God !", "artist": "Jacqui", "album": "Birthday", "duration_seconds": 177, "is_available": true, "category_id": null}
 {"id": "uMMVp0t0Ieg", "title": "The Unknown", "artist": "Quest", "album": "Last Days / The Unknown", "duration_seconds": 393, "is_available": true, "category_id": "deep_dubstep_140_uk_bass"}
 {"id": "srJwjcHXDwo", "title": "Good Old Days", "artist": "Jack Sparrow", "album": "Afraid Of Me", "duration_seconds": 350, "is_available": true, "category_id": "deep_dubstep_140_uk_bass"}
