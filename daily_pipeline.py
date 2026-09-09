@@ -179,13 +179,12 @@ for cat_id, video_ids in categorized_groups.items():
 
     # If it's a brand new playlist, we know it's empty. Otherwise, fetch existing tracks.
     existing_vids = set()
-    if not is_new_playlist:
-        try:
-            playlist_data = ytm.get_playlist(playlist_id, limit=1000)
-            playlist_items = playlist_data.get("tracks", [])
-            existing_vids = {item.get("videoId") or item.get("id") for item in playlist_items if item}
-        except Exception as e:
-            print(f"Warning: Could not fetch tracks for existing playlist '{playlist_name}': {e}")
+    try:
+        playlist_data = ytm.get_playlist(playlist_id, limit=1000)
+        playlist_items = playlist_data.get("tracks", [])
+        existing_vids = {item.get("videoId") or item.get("id") for item in playlist_items if item}
+    except Exception as e:
+        print(f"Warning: Could not fetch tracks for existing playlist '{playlist_name}': {e}")
             
     new_vids = [vid for vid in video_ids if vid not in existing_vids]
     if new_vids:
