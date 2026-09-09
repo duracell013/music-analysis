@@ -146,7 +146,7 @@ print(f"Saved total {len(all_tracks)} tracks to {TRACKS_FILE}.")
 
 # 7. Update YouTube Music Playlists
 print("Syncing playlists with YouTube Music...")
-user_playlists = ytm.get_user_playlists()
+user_playlists = ytm.get_user_playlists(limit=50)
 playlist_map = {p["title"]: p["playlistId"] for p in user_playlists}
 
 # Group videoIds by category
