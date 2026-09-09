@@ -150,6 +150,8 @@ print("Syncing playlists with YouTube Music...")
 # Fetch all playlists from your authenticated library
 user_playlists = ytm.get_library_playlists(limit=100)
 playlist_map = {p["title"]: p["playlistId"] for p in user_playlists}
+print("Playlist map")
+print(json.dump(playlist_map, indent=2))
 
 # Group videoIds by category
 categorized_groups = {}
@@ -164,9 +166,10 @@ for cat_id, video_ids in categorized_groups.items():
     
     # Get or create playlist
     if playlist_name not in playlist_map:
+        print(f"Creating {playlist_name}...")
         playlist_id = ytm.create_playlist(
             title=playlist_name, 
-            description=f"Auto-generated playlist for {playlist_name}"
+            description=f"Auto playlist for {playlist_name}"
         )
         playlist_map[playlist_name] = playlist_id
     else:
