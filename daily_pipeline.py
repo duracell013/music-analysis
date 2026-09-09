@@ -1,26 +1,23 @@
-import json
 import os
-import time
+import json
 from pathlib import Path
-from typing import List, Optional
-from pydantic import BaseModel, Field
-from google import genai
 from ytmusicapi import YTMusic
 
-# File paths
-CATEGORIES_FILE = Path("data/categories.json")
-TRACKS_FILE = Path("data/categorized_tracks.jsonl")
-YTM_AUTH_FILE = Path("browser.json")
+# 1. Setup YTMusic authentication (Environment Secret vs. Local File)
+ytm_secret = os.getenv("YTM_BROWSER_JSON")
+local_auth_file = Path("browser.json")
 
-# 1. Setup YTMusic authentication from environment secret or local file
-if os.getenv("YTM_AUTH_JSON"):
-    YTM_AUTH_FILE.write_text(os.getenv("YTM_AUTH_JSON"), encoding="utf-8")
-
-if not YTM_AUTH_FILE.exists():
-    raise FileNotFoundError("YTM auth missing. Ensure browser.json exists or YTM_AUTH_JSON env variable is set.")
-
-ytm = YTMusic(str(YTM_AUTH_FILE))
-
+if ytm_secret:
+    # Initialize directly from the secret in memory
+    ytm = YTMusic(ytm_secret)
+elif local_auth_file.exists():
+    # Initialize from local browser.json file
+    ytm = YTMusic(str(local_auth_file))
+else:
+    raise FileNotFoundError(
+        "YouTube Music authentication missing. "
+        "Set the YTM_BROWSER_JSON environment variable or ensure 'browser.json' exists locally."
+    )
 # 2. Load Categories
 with open(CATEGORIES_FILE, "r", encoding="utf-8") as f:
     categories_data = json.load(f)["categories"]
