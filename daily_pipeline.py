@@ -186,14 +186,14 @@ for cat_id, video_ids in categorized_groups.items():
     new_vids = [vid for vid in video_ids if vid not in existing_vids]
     if new_vids:
         # Chunk additions into batches of 50 to prevent API rejection/timeouts on large lists
-        BATCH_SIZE = 50
+        BATCH_SIZE = 10
         added_count = 0
         for i in range(0, len(new_vids), BATCH_SIZE):
             chunk = new_vids[i:i + BATCH_SIZE]
             try:
                 ytm.add_playlist_items(playlist_id, chunk)
                 added_count += len(chunk)
-                time.sleep(1)
+                time.sleep(5)
             except Exception as e:
                 print(f"Error adding batch to '{playlist_name}': {e}")
         print(f"Added {added_count} new tracks to playlist '{playlist_name}'.")
