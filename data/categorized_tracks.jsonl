@@ -442,7 +442,7 @@
 {"id": "3s6JWxtWjpQ", "title": "IC3 (feat. Skepta)", "artist": "Ghetts", "album": "Conflict Of Interest", "duration_seconds": 229, "is_available": true, "category_id": "grime_uk_drill_british_rap"}
 {"id": "o7sqZE1RZjw", "title": "Don't Be Dumb", "artist": "Dizzee Rascal, Ocean Wisdom", "album": "E3 AF", "duration_seconds": 212, "is_available": true, "category_id": "grime_uk_drill_british_rap"}
 {"id": "c7wlUxlZ6J4", "title": "Stack The Deck", "artist": "El Michels Affair, Bobby Oroza", "album": "Stack The Deck", "duration_seconds": 202, "is_available": true, "category_id": "afrobeat_highlife_afro_jazz"}
-{"id": "Dnkoy6bXF8w", "title": "Oh My God !", "artist": "Jacqui", "album": "Birthday", "duration_seconds": 177, "is_available": true, "category_id": null}
+{"id": "Dnkoy6bXF8w", "title": "Oh My God !", "artist": "Jacqui", "album": "Birthday", "duration_seconds": 177, "is_available": true, "category_id": "art_pop_folk_singer_songwriter"}
 {"id": "uMMVp0t0Ieg", "title": "The Unknown", "artist": "Quest", "album": "Last Days / The Unknown", "duration_seconds": 393, "is_available": true, "category_id": "deep_dubstep_140_uk_bass"}
 {"id": "srJwjcHXDwo", "title": "Good Old Days", "artist": "Jack Sparrow", "album": "Afraid Of Me", "duration_seconds": 350, "is_available": true, "category_id": "deep_dubstep_140_uk_bass"}
 {"id": "VED7-7Zxdvg", "title": "Ruffhouse (feat. Rod Azlan)", "artist": "J:Kenzo", "album": "Ruffhouse / Therapy", "duration_seconds": 343, "is_available": true, "category_id": "deep_dubstep_140_uk_bass"}
@@ -776,7 +776,7 @@
 {"id": "mKyZYGTTThc", "title": "Shakara", "artist": "Fela Kuti, Afrika 70", "album": "Shakara", "duration_seconds": 807, "is_available": true, "category_id": "afrobeat_highlife_afro_jazz"}
 {"id": "NL9J8d4NN-Q", "title": "We Drift Like Worried Fire", "artist": "Godspeed You Black Emperor!", "album": "'Allelujah! Don't Bend! Ascend! ", "duration_seconds": 1198, "is_available": true, "category_id": "post_rock_math_rock_alternative"}
 {"id": "3TCyLIiqd2g", "title": "Afrodisco Beat", "artist": "Tony Allen With Africa 70", "album": "Progress, Jealousy", "duration_seconds": 717, "is_available": true, "category_id": "afrobeat_highlife_afro_jazz"}
-{"id": "zqjERIJubLc", "title": "Evil Boy (feat. Wanga)", "artist": "Die Antwoord", "album": "$O$", "duration_seconds": 298, "is_available": true, "category_id": null}
+{"id": "zqjERIJubLc", "title": "Evil Boy (feat. Wanga)", "artist": "Die Antwoord", "album": "$O$", "duration_seconds": 298, "is_available": true, "category_id": "industrial_techno_darkwave"}
 {"id": "Eso3I1rYK9s", "title": "Les Beaux Jours", "artist": "Agoria", "album": null, "duration_seconds": 470, "is_available": true, "category_id": "industrial_techno_darkwave"}
 {"id": "4_AO4wV0xSw", "title": "On & On (feat. AnnenMayKantereit & Roméo Elvis)", "artist": "Her", "album": "Her", "duration_seconds": 219, "is_available": true, "category_id": "art_pop_folk_singer_songwriter"}
 {"id": "aJseEtzsj1E", "title": "Bouger la tête", "artist": "IAM", "album": "L'école du micro d'argent", "duration_seconds": 284, "is_available": true, "category_id": "chanson_francaise_french_pop"}
@@ -901,7 +901,7 @@
 {"id": "av2Th9sIvuI", "title": "Blue Train", "artist": "John Coltrane", "album": "Blue Train", "duration_seconds": 643, "is_available": true, "category_id": "modal_avant_garde_classic_jazz"}
 {"id": "MtT3asQ6ys8", "title": "All Res", "artist": "GoGo Penguin", "album": "Man Made Object", "duration_seconds": 316, "is_available": true, "category_id": "contemporary_uk_jazz_fusion"}
 {"id": "WTUABUCEEZI", "title": "Kix", "artist": "Miles Davis", "album": "We Want Miles", "duration_seconds": 1115, "is_available": true, "category_id": "modal_avant_garde_classic_jazz"}
-{"id": "-Zw1BA_JqaA", "title": "Maybe", "artist": "Screamin’ Jay Hawkins", "album": "Peut-Etre OST", "duration_seconds": 262, "is_available": true, "category_id": null}
+{"id": "-Zw1BA_JqaA", "title": "Maybe", "artist": "Screamin’ Jay Hawkins", "album": "Peut-Etre OST", "duration_seconds": 262, "is_available": true, "category_id": "modal_avant_garde_classic_jazz"}
 {"id": "EsgPgkHQLHs", "title": "Jeru", "artist": "Miles Davis", "album": "Birth of the Cool", "duration_seconds": 196, "is_available": true, "category_id": "modal_avant_garde_classic_jazz"}
 {"id": "4xXp-lepjck", "title": "Dexter", "artist": "Ricardo Villalobos", "album": "Alcachofa", "duration_seconds": 546, "is_available": true, "category_id": "minimal_techno_microhouse"}
 {"id": "Jrmw0GkjOfQ", "title": "Skidoos", "artist": "Akufen", "album": "My Way", "duration_seconds": 541, "is_available": true, "category_id": "minimal_techno_microhouse"}
@@ -1503,3 +1503,6 @@
 {"id": "bZAP3z4Ol5E", "title": "Drop In", "artist": "Mary Droppinz", "album": "Drop In", "category_id": "industrial_techno_darkwave"}
 {"id": "-ne7agjoWfg", "title": "Play Dub Selecta", "artist": "Mungo's Hi Fi", "album": "Play Music Selecta", "category_id": "roots_reggae_dub_system"}
 {"id": "1aukkx-Lses", "title": "Ties Unwind (NOiSEMAKER dub Mix)", "artist": "Boostive, Racquel Jones, Divina Jasso", "album": "Ties Unwind (NOiSEMAKER dub Mix)", "category_id": "roots_reggae_dub_system"}
+{"id": "ZR0TQ4VpI4s", "title": "Magic Circle", "artist": "Travis Lake", "album": "Fairlight", "category_id": "minimal_techno_microhouse"}
+{"id": "HGHFErI5h-c", "title": "Leave Me Alone", "artist": "Tommy Cash", "album": "Euroz Dollaz Yeniz", "category_id": "art_pop_folk_singer_songwriter"}
+{"id": "wauFOOSszBI", "title": "Seek & Move", "artist": "Yoofee", "album": "Seek & Move", "category_id": "deep_dubstep_140_uk_bass"}
